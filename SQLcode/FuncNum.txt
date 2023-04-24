@@ -1,0 +1,14 @@
+CREATE OR REPLACE FUNCTION count_goods RETURN NUMBER
+IS
+  -- Declare a variable to store the count
+  v_count NUMBER;
+BEGIN
+  -- Use the COUNT function to count the number of records in the table
+  SELECT COUNT(*) INTO v_count
+  FROM Goods;
+  -- Return the count
+  RETURN v_count;
+END;
+
+SELECT count_goods() as num_goods
+FROM dual;
